@@ -2,7 +2,6 @@ import serial
 import time
 import os
 
-time.sleep(10)
 
 def at(port, cmd):
     """执行 AT 命令返回结果"""
@@ -74,7 +73,7 @@ with serial.Serial(COM_PORT, baudrate=115200, timeout=5) as port:
             print('ATD>', lines)
             break
 
-    time.sleep(3)
+    time.sleep(1)
     at(port, 'AT+CREC=4,"C:\\to_play.amr",0,90')
 
     print('All done.')
